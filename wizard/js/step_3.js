@@ -1,82 +1,25 @@
 
-var message_Q4 = "<div class='textfild'>Planen Sie in Ihrer Bildungsressource fremde Materialien/Inhalte zu verwenden?</div><br/><br/>"; 
+
 var q4map = new Map();
 
 function replay_step_3(clicked_id,id) {
 	
-	q4map.set("q3","Ja, ich möchte fremde Materialien vermischen/zusammenstellen und wiederveröffentlichen")
-	q4map.set("q2","Ja, ich möchte fremde Materialien 1 zu 1 verwenden/einbinden und wiederveröffentlichen")
-	q4map.set("q4","Ja, ich möchte fremdes Material verändern und wiederveröffentlichen")
-	q4map.set("q1","Nein, ich werde ausschließlich eigene Materialien verwenden")
-	//q4map.set("q5","Ja, ich möchte fremdes Material verändern.")
-
-    	var par = "step-"+id;
-		var seit = "s"+id;
-		remove1(clicked_id, id, seit)
-		
-			//getTextfeldFormat(clicked_id);
-		remove();
-		
-		if(button1.size > 0 && button1.get(clicked_id) != undefined){
-			setData(clicked_id)
-			}
-		 if(button2.size > 0 && button2.get(clicked_id) != undefined){
-			 setData(clicked_id)
-				}
-		 if(button3.size > 0 && button3.get(clicked_id) != undefined){
-			 //setData(clicked_id)
-			 
-				}
-		 if(button4.size > 0 && button4.get(clicked_id) != undefined){
-			 //setData(clicked_id)
-				}
-		
+	document.getElementById("step-3").innerHTML="";
 	
-    	var buttonselect = queryId(clicked_id);
+	document.getElementById("s3").innerHTML ="3 Struktur und Orientierung";
+	
+	
+	var button1 = "<button id='1' class='textfild' onClick='replay_step_4(this.id, 3)'>Die Struktur ist einfach und übersichtlich. Der Lehr- bzw. Lernablauf kann jederzeit unterbrochen werden. Auf alle (zuvor dargestellten) Lehr- bzw. Lerninhalte kann jederzeit zugegriffen werden. (5)</button>" ;
+	
+	var button2 = "<button id='2' class='textfild' onClick='replay_step_4(this.id, 3)'>Die Struktur ist weitgehend übersichtlich. Zumindest an einigen Stellen besteht die Möglichkeit den Lehr- bzw. Lernablauf zu unterbrechen bzw. zu vorher dargestellten Inhalten zurückzukehren. (3)</button>" ;
+	
+	var button3 = "<button id='3' class='textfild' onClick='replay_step_4(this.id, 3)'>Die Struktur ist unübersichtlich bzw. unverständlich oder die Lehr- bzw. Lernsequenz kann nicht unterbrochen und an der gleichen Stelle fortgesetzt werden. (1)</button>" ;
+	
+	document.getElementById("step-3").innerHTML +="</br></br>"+ button1+"</br>"+button2+"</br>"+button3;
+	$('#smartwizard').smartWizard("next");
+}
 
-	    $('#smartwizard').smartWizard("next");
-	    
-	    document.getElementById(par).innerHTML = message_Q4;
-	    document.getElementById(seit).innerHTML = id+ " Urheberrechtsbestimmungen";
-		
-		for (const [key, value] of q4map.entries()) {
-			
-			if(id == 3){
-				
-				var button = "<button id="+ key+ " onClick='replay_step_4(this.id, 4)' " +
-					" text='"  +key +
-					" buttontext='"  +value.split(":")[0] +
-					"' class='button3'> " +value.split(":")[0] +"</button></br></br></br>"
 
-			}else{ 
-				
-				var button = "<button id="+ key+ " onClick='replay_step_4(this.id, 5)' " +
-					"text='" +key +
-					"'  buttontext='"  +value.split(":")[0] +
-					"' class='button3'> " +value.split(":")[0] +"</button></br></br></br>"
-			}
-			document.getElementById(par).innerHTML += button;
-		}
-		
-			navigation.set("nav3", document.getElementById(clicked_id).getAttribute("text"));
-			document.getElementById("footer").innerHTML = "<span style= 'color: #0A1F40; font-size: 20px;'>" +
-					"<b>Ihre Auswahl:</b> " +navigation.get("nav1").toUpperCase()+" &#10141; "+navigation.get("nav3").toUpperCase();
-	}	
-
-  function setData(clicked_id){
-	  
-		var button1_select = queryId(clicked_id);
-		
-		var b1_text = button1_select.getAttributeNode("dataformat").value;
-		var b1_tool = button1_select.getAttributeNode("tool").value;
-		var b1_heading = button1_select.getAttributeNode("heading").value;
-		var b1_intro = button1_select.getAttributeNode("intro").value;
-
-		result.set("dataformat", b1_text);
-		result.set("tool", b1_tool);
-		result.set("heading", b1_heading);
-		result.set("intro", b1_intro);
-  }
 
 	function remove1(clicked_id, id,seit){
 	 

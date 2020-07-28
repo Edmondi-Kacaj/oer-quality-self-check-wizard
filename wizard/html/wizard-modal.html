@@ -21,6 +21,8 @@
 <script src="../js/step_3.js"></script>
 <script src="../js/step_4.js"></script>
 <script src="../js/step_5.js"></script>
+<script src="../js/step_6.js"></script>
+<script src="../js/step_7.js"></script>
 <script src="../pdfCreator/js/pdfcreator.js"></script>
 <script src="../text/object_1.js"></script>
 <script src="../text/object_2.js"></script>
@@ -102,41 +104,43 @@ text-align: left;
 						<div id="smartwizard" >				 
 							<ul>
 								<li><a href="#step-1"><br />
-										<div style="font-size:18px;" id="s1">1 Inhaltstyp</div></a></li>
+										<div style="font-weight: bold" id="s1">1 Inhaltliche Wiederverwertbarkeit</div></a></li>
 								<li><a href="#step-2"><br />
-										<div style="font-size:18px;" id="s2"></div></a></li>
+										<div style="font-weight: bold" id="s2"></div></a></li>
 								<li><a href="#step-3"><br />
-										<div style="font-size:18px;" id="s3"></div></a></li>
+										<div style="font-weight: bold" id="s3"></div></a></li>
 								<li><a href="#step-4"><br />
-										<div style="font-size:18px;" id="s4"></div></a></li>
+										<div style="font-weight: bold" id="s4"></div></a></li>
 								<li><a href="#step-5"><br />
-										<div style="font-size:18px;" id="s5"></div></a></li>
+										<div style="font-weight: bold" id="s5"></div></a></li>
+								<li><a href="#step-6"><br />
+										<div style="font-weight: bold" id="s6"></div></a></li>
+								<li><a href="#step-7"><br />
+										<div style="font-weight: bold" id="s7"></div></a></li>
 							</ul>
 						
 							<div>
 							
 								<div id="step-1" class="">
-									
-									<div class="textfild">Welche Bildungsressource möchten Sie erstellen?</div>
 									<br />
 									
 									<button id="step1-b1" onClick="replay_step_1(this.id)" text="INFORMATIONSMATERIAL"
-										class="button">Informationsmaterial</button>
-									<br /> <br /> <br />
+										class="textfild">Die Bildungsressource beinhaltet oder besteht aus klar abgrenzbaren Lehr- bzw. Lernobjekten, die problemlos in Kursen oder anderen Kontexten (z. B. in einem Studiengang) eingesetzt werden können. Die Inhalte sind in sich geschlossen und setzen nicht die Verwendung anderer Materialien voraus. (5)</button>
+									<br /> <br /> 
 									<button id="step1-b2" onClick="replay_step_1(this.id)" text="Aufgaben"
-										class="button">Aufgaben</button>
-									<br /></br> <br />
+										class="textfild">Zumindest manche Lehr- bzw. Lernobjekte der Bildungsressource können ohne weitreichende Modifikationen auch in anderen Kontexten eingesetzt werden. (3)</button>
+									<br /></br>
 									<button id="step1-b3" onClick="replay_step_1(this.id)" text="Lektion"
-										class="button">Lektion</button>
-									<br /></br> <br />
-									<button id="step1-b4" onClick="replay_step_1(this.id)" text="Kurs"
-										class="button">Kurs</button>
-									</br> <br /></br> <br />
+										class="textfild">Aufgrund von inhaltlicher Abhängigkeit ist es nicht möglich, Lehr- bzw. Lernobjekte der Bildungsressource in anderen Kontexten wiederzuverwenden.  (1)</button>
+									<br /></br> 
+									
 								</div>
-								<div id="step-2" text="ddffff" class=""></div>
+								<div id="step-2" class=""></div>
 								<div id="step-3" class=""></div>
 								<div id="step-4" class=""></div>
 								<div id="step-5" class=""></div>
+								<div id="step-6" class=""></div>
+								<div id="step-7" class=""></div>
 							</div>
 						</div>
 					</div>
@@ -167,7 +171,7 @@ text-align: left;
 	<script type="text/javascript">
         $(document).ready(function(){	
 
-        	tooltip();
+        	
         	
         	$("#tolltip").tooltip({
     	        title: "<div class='tooltip2'>Mit diesem Planungstool generieren Sie in wenigen Schritten einen individuellen Leitfaden, der Sie dabei unterstützt qualitativ hochwertige Bildungsmaterialien im OER Standard zu erstellen. Entsprechend Ihrer Auswahl erhalten Sie formale und didaktische Empfehlungen sowie Hinweise zu Lizenzangaben ", 	
@@ -185,6 +189,8 @@ text-align: left;
 			document.getElementById("s3").innerHTML = "3";
 			document.getElementById("s4").innerHTML = "4";
 			document.getElementById("s5").innerHTML = "5";
+			document.getElementById("s6").innerHTML = "6";
+			document.getElementById("s7").innerHTML = "7";
 		}
 
 	 });
@@ -202,10 +208,11 @@ text-align: left;
             var btnCancel = $('<button></button>').text('Löschen')
                                              .addClass('btn btn-danger')
                                              .on('click', function(){ $('#smartwizard').smartWizard("reset");                                      
-                                             array1.forEach(element => document.querySelector(element).style.backgroundColor = "&#10141;");
+                                            /*  array1.forEach(element => document.querySelector(element).style.backgroundColor = "&#10141;"); */
                                              result.clear();
                                              document.getElementById("footer").innerHTML = "<span style= 'color: &#10141; font-size: 20px;'>" +
                      						"<b>Ihre Auswahl:</b> " +" Noch nichts ausgewählt!";
+                                         	document.getElementById("download").disabled = true;    
                                              });
             // Smart Wizard 1
             $('#smartwizard').smartWizard({

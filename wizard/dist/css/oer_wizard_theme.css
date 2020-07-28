@@ -191,16 +191,16 @@
 
 .textfild {
 	background-color: #e4e9ec;
-	padding: 15px; border: 15px solid #FFFFFF;
+	padding: 10px; border: 10px solid #FFFFFF;
 	border-radius: 25px;
-	width: 700px;
-	margin: 0 175px;
+	width: 850px;
+	margin: 0 100px;
 	color: black;
 	
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	font-size: 27px;
+	font-size: 20px;
 	cursor: pointer;
 }
 
