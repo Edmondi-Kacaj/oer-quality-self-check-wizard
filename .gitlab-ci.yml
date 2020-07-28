@@ -2,7 +2,7 @@ pages:
   stage: deploy
   script:
     - mkdir .public
-    - cp -r self-check-wizard/* .public
+    - cp -r wizard/* .public
     - mv .public public
   artifacts:
     paths:
