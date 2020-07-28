@@ -1,0 +1,14 @@
+pages:
+  stage: deploy
+  script:
+    - mkdir .public
+    - cp -r self-check-wizard/* .public
+    - mv .public public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+    
+#include:
+ # - local: '.gitlab-ci-sonar.yml'
