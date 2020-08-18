@@ -145,10 +145,27 @@
 	background-color: #f4f6f7 ; /* blue */
 	border: none;
 	border-radius: 35px;
-	width: 800px;
-	margin: 0 20px;
+	width: 600px;
+	margin: 0 0px;
 	color: black;
-	padding: 20px; border: 20px solid #FFFFFF;
+	padding: 10px; border: 15px solid #FFFFFF;
+	margin: 0 40px;
+	text-align: left;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 17px;
+	cursor: pointer;
+}
+
+.labletext1 {
+	background-color: #f4f6f7 ; /* blue */
+	border: none;
+	border-radius: 35px;
+	width: 710px;
+	margin: 0 0px;
+	color: black;
+	padding: 5px; border: 10px solid #FFFFFF;
+	margin: 0 50px;
 	text-align: left;
 	text-decoration: none;
 	display: inline-block;

@@ -41,6 +41,64 @@ integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAu
 <link href="../dist/css/oer_wizard_theme.css" rel="stylesheet" type="text/css" />
 
  <style type="text/css">
+ 
+   p {
+    color: red;
+    margin: 8px;
+  }
+ 
+ .slidecontainer {
+  width: 100%; /* Width of the outside container */
+  
+}
+
+/* The slider itself */
+.slider {
+
+writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    
+    width: 20px;
+    height: 375px;
+      border-radius: 10px;
+  background: #f57900;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+    
+  /* -webkit-appearance: none;  /* Override default CSS styles */
+ 
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 250px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: red; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 60px; /* Set a specific slider handle width */
+  height: 30px; /* Slider handle height */
+  background: #0A1F40; /* Green background */
+  	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+  cursor: pointer; /* Cursor on hover */
+}
+
+
+ 
  #div1
  {
  background-color: #0A1F40; padding: 0px 20px;
@@ -59,6 +117,8 @@ position:absolute;
    
    border: none;
    cursor: pointer;
+   
+   
  /* position:absolute; padding: 30px
  border: none;
  border-radius: 15px;
@@ -74,6 +134,7 @@ text-align: left;
  
  font-size: 25px; */
  }
+ 
 
 
  </style>
@@ -122,34 +183,47 @@ text-align: left;
 							<div>
 							
 								<div id="step-1" class="">
-									<br />
+								
+									</br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-10">
+      <div class="row">
+        <input orient="vertical"  type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <div class="labletext1">
+        <button  id="step1-b1" onClick="replay_step_1(this.id)" class="labletext" text="INFORMATIONSMATERIAL">Die OER verfügt über ein einheitliches und den Inhalten angemessenes Design. Alle Texte sind gut lesbar und alle Abbildungen gut erkennbar.</button>
+        <button id="step1-b2" onClick="replay_step_1(this.id)" class="labletext" text="INFORMATIONSMATERIAL">Alle Texte und Abbildungen der OER sind gut lesbar bzw. erkennbar. Die Nutzung der Bildungsressource wird durch das Design nicht eingeschränkt. </button>
+        <button id="step1-b3" onClick="replay_step_1(this.id)" class="labletext" text="INFORMATIONSMATERIAL">Das Design der OER beeinträchtigt das Lesen der Texte oder das Nachvollziehen von Abbildungen. Die Nutzbarkeit des Lehr- bzw. Lernobjektes ist durch die Darstellung wesentlich eingeschränkt. </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 									
-									<button id="step1-b1" onClick="replay_step_1(this.id)" text="INFORMATIONSMATERIAL"
-										class="textfild">Die Bildungsressource beinhaltet oder besteht aus klar abgrenzbaren Lehr- bzw. Lernobjekten, die problemlos in Kursen oder anderen Kontexten (z. B. in einem Studiengang) eingesetzt werden können. Die Inhalte sind in sich geschlossen und setzen nicht die Verwendung anderer Materialien voraus. (5)</button>
-									<br /> <br /> 
-									<button id="step1-b2" onClick="replay_step_1(this.id)" text="Aufgaben"
-										class="textfild">Zumindest manche Lehr- bzw. Lernobjekte der Bildungsressource können ohne weitreichende Modifikationen auch in anderen Kontexten eingesetzt werden. (3)</button>
-									<br /></br>
-									<button id="step1-b3" onClick="replay_step_1(this.id)" text="Lektion"
-										class="textfild">Aufgrund von inhaltlicher Abhängigkeit ist es nicht möglich, Lehr- bzw. Lernobjekte der Bildungsressource in anderen Kontexten wiederzuverwenden.  (1)</button>
-									<br /></br> 
-									
-								</div>
-								<div id="step-2" class=""></div>
+ <p>Range: <span id="demo"></span></p>
+ </div>
+
+								 <div id="step-2" class=""></div> 
 								<div id="step-3" class=""></div>
 								<div id="step-4" class=""></div>
 								<div id="step-5" class=""></div>
 								<div id="step-6" class=""></div>
-								<div id="step-7" class=""></div>
+								<div id="step-7" class=""></div> 
 							</div>
 						</div>
 					</div>
-					<div class="modal-footer" style="background-color: #E6E6E6;">
-						<span id="footer"
+					
+      
+					<div class="modal-footer" style="background-color: #E6E6E6; text-align: left;">
+			<!-- 		<span id="footer"
 							style="float: left; width: 100%; text-align: left; color: &#10141; font-size: 25px;"><span><strong>Ihre
-									Auswahl:</b></span> Noch nichts ausgewählt!</span>
-						<button type="button" class="btn btn-secondary"
-							data-dismiss="modal">Schließen</button>							
+									Auswahl:</b></span> Noch nichts ausgewählt!</span>  -->
+					
+								 <button type="button" class="btn btn-secondary" onClick="zu()">Zurück</button>
+						 <button type="button" class="btn btn-secondary" onClick="re()">Weiter</button>	 
+						  	 
+							
+								
 					</div>
 				</div>
 			</div>
@@ -157,7 +231,86 @@ text-align: left;
 	</div>
 
 	<!-- jQuery Versions -->
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+	<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script src = "https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+      
+      <script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+	
+   
+	
+  output.innerHTML = "<bold>"+this.value+" %</bold>";
+  
+  if(this.value == 100){
+	  var output1 = document.getElementById("step1-b1");
+	  var output2 = document.getElementById("step1-b2");
+	  var output3 = document.getElementById("step1-b3");
+	  output1.innerHTML = "Die OER verfügt über ein einheitliches und den Inhalten angemessenes Design. Alle Texte sind gut lesbar und alle Abbildungen gut erkennbar.";
+	  output2.innerHTML = "Alle Texte und Abbildungen der OER sind gut lesbar bzw. erkennbar. Die Nutzung der Bildungsressource wird durch das Design nicht eingeschränkt.";
+	  output3.innerHTML = "Das Design der OER beeinträchtigt das Lesen der Texte oder das Nachvollziehen von Abbildungen. Die Nutzbarkeit des Lehr- bzw. Lernobjektes ist durch die Darstellung wesentlich eingeschränkt.";
+  }
+  
+  if(this.value == 75){
+	  var output1 = document.getElementById("step1-b1");
+	  var output2 = document.getElementById("step1-b2");
+	  var output3 = document.getElementById("step1-b3");
+	  output1.innerHTML = "Die Bildungsressource beinhaltet oder besteht aus klar abgrenzbaren Lehr- bzw. Lernobjekten";
+	  output2.innerHTML = "Zumindest manche Lehr- bzw. Lernobjekte der Bildungsressource können ohne weitreichende Modifikationen auch in anderen Kontexten eingesetzt werden.";
+	  output3.innerHTML = "Aufgrund von inhaltlicher Abhängigkeit ist es nicht möglich, Lehr- bzw. Lernobjekte der Bildungsressource in anderen Kontexten wiederzuverwenden.";
+  }
+  
+
+}
+</script>
+
+<script type="text/javascript">
+function re() {
+	
+	
+	
+  	$("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection, stepPosition) {
+  		console.log(stepNumber)
+		if(stepDirection === 'backward'){
+		} 
+		
+		if(stepNumber === 1){
+			document.getElementById("step-2").innerHTML="";
+			
+			
+			document.getElementById("s2").innerHTML = "2 Design und Lesbarkeit";
+			
+				var button1 = "<button id='1' class='textfild' onClick='replay_step_3(this.id, 3)'>Die OER verfügt über ein einheitliches und den Inhalten angemessenes Design. Alle Texte sind gut lesbar und alle Grafiken gut erkennbar. (5)</button>" ;
+				
+				var button2 = "<button id='2' class='textfild' onClick='replay_step_3(this.id, 3)'>Die Struktur ist weitgehend übersichtlich. Zumindest an einigen Stellen besteht die Möglichkeit den Lehr- bzw. Lernablauf zu unterbrechen bzw. zu vorher dargestellten Inhalten zurückzukehren. (3)</button>" ;
+				
+				var button3 = "<button id='3' class='textfild' onClick='replay_step_3(this.id, 3)'>Die Struktur ist unübersichtlich bzw. unverständlich oder die Lehr- bzw. Lernsequenz kann nicht unterbrochen und an der gleichen Stelle fortgesetzt werden. (1)</button>" ;
+				
+				document.getElementById("step-2").innerHTML +="</br></br>"+ button1+"</br>"+button2+"</br>"+button3;
+		
+	}
+
+ });
+	
+	
+		
+
+	$('#smartwizard').smartWizard("next");
+
+	
+}
+
+function zu(q) {
+	$('#smartwizard').smartWizard("prev");
+	console.log(q)
+	
+}
+</script>
 
 	<!-- Bootstrap JavaScript -->
 	<script
@@ -169,6 +322,8 @@ text-align: left;
 	<script type="text/javascript" src="../dist/js/jquery.smartWizard.min.js"></script>
 
 	<script type="text/javascript">
+	
+
         $(document).ready(function(){	
 
         	
@@ -220,11 +375,16 @@ text-align: left;
                     theme: 'arrows',
                     transitionEffect:'fade',
                     showStepURLhash: false,
-                    toolbarSettings: {toolbarPosition: '',
-                                      toolbarExtraButtons: [btnFinish, btnCancel]
+                    toolbarSettings: {
+                        toolbarPosition: 'bottom', // none, top, bottom, both
+                        toolbarButtonPosition: 'left', // left, right, center
+                        showNextButton: false, // show/hide a Next button
+                        showPreviousButton: false, // show/hide a Previous button
+                        toolbarExtraButtons: [] // Extra buttons to show on toolbar, array of jQuery input/buttons elements
+                    
                              }
             });
-          	document.getElementById("download").disabled = true;          	
+          	/* document.getElementById("download").disabled = true;      */     	
         });
     </script>
 
