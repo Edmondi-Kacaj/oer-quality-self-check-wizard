@@ -1,393 +1,479 @@
+
+
 <!doctype html>
-
 <html lang="en">
-<head>
-<title>Smart Wizard</title>
-<meta charset="utf-8">
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.62/pdfmake.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.62/vfs_fonts.js"></script>
-	
-	
-	
-<script src="../js/step_1.js"></script>
-<script src="../js/step_3.js"></script>
-<script src="../js/step_4.js"></script>
-<script src="../js/step_5.js"></script>
-<script src="../js/step_6.js"></script>
-<script src="../js/step_7.js"></script>
-<script src="../pdfCreator/js/pdfcreator.js"></script>
-<script src="../text/object_1.js"></script>
-<script src="../text/object_2.js"></script>
-<script src="../text/object_3.js"></script>
-<script src="../text/object_4.js"></script>
-<script src="../text/license/license.js"></script>
-<script src="../text/tooltip.js"></script>
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" 
-integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
-
-<link href="../dist/css/smart_wizard_theme_arrows.css" rel="stylesheet" type="text/css" />
-	
-<link href="../dist/css/oer_wizard_theme.css" rel="stylesheet" type="text/css" />
-
- <style type="text/css">
- 
-   p {
-    color: red;
-    margin: 8px;
-  }
- 
- .slidecontainer {
-  width: 100%; /* Width of the outside container */
-  
-}
-
-/* The slider itself */
-.slider {
-
-writing-mode: bt-lr; /* IE */
-    -webkit-appearance: slider-vertical; /* WebKit */
-    
-    width: 20px;
-    height: 375px;
-      border-radius: 10px;
-  background: #f57900;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-    
-  /* -webkit-appearance: none;  /* Override default CSS styles */
- 
-}
-
-/* Mouse-over effects */
-.slider:hover {
-  opacity: 1; /* Fully shown on mouse-over */
-}
-
-/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
-  appearance: none;
-  width: 250px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: red; /* Green background */
-  cursor: pointer; /* Cursor on hover */
-}
-
-.slider::-moz-range-thumb {
-  width: 60px; /* Set a specific slider handle width */
-  height: 30px; /* Slider handle height */
-  background: #0A1F40; /* Green background */
-  	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 20px;
-  cursor: pointer; /* Cursor on hover */
-}
-
-
- 
- #div1
- {
- background-color: #0A1F40; padding: 0px 20px;
-position:absolute;
-
-  width: 858px;
-   height: 60px;
-
-	border-radius: 15px;
-   font-size: 22px;
-   text-align: left;
-
-   text-transform: uppercase;
-   color: white;
-
-   
-   border: none;
-   cursor: pointer;
-   
-   
- /* position:absolute; padding: 30px
- border: none;
- border-radius: 15px;
- 
- 
- width:500px;
- height:0px;
- background-color:#0A1F40;
- padding: 40px 40px;
- color: white;
-text-align: left;
- text-decoration: none;
- 
- font-size: 25px; */
- }
- 
-
-
- </style>
-</head>
-<body>
-	<div class="container">
-		<!-- External toolbar sample -->
-		<div class="row d-flex align-items-center p-3 my-3 text-white-50">
-			<button type="button" class="btn btn-primary" data-toggle="modal"
-				data-target="#exampleModal">Click to launch Smart Wizard
-				modal</button>
-		</div>
-
-	
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-			aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div
-				 class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
-				role="document">
-				<div class="modal-content">
-					<div id="tolltip" class="modal-header" style="background-color: #54B6B5">
-						<div id="exampleModalLabel" style="font-size:32px;  font-family: 'Work Sans', sans-serif; ">
-						OER Qualitätscheck</div>
-						<img src="../image/oer.png" alt=" " width='300' height='70' >
-					</div>
-
-					<div class="modal-body">
-						<div id="smartwizard" >				 
-							<ul>
-								<li><a href="#step-1"><br />
-										<div style="font-weight: bold" id="s1">1 Inhaltliche Wiederverwertbarkeit</div></a></li>
-								<li><a href="#step-2"><br />
-										<div style="font-weight: bold" id="s2"></div></a></li>
-								<li><a href="#step-3"><br />
-										<div style="font-weight: bold" id="s3"></div></a></li>
-								<li><a href="#step-4"><br />
-										<div style="font-weight: bold" id="s4"></div></a></li>
-								<li><a href="#step-5"><br />
-										<div style="font-weight: bold" id="s5"></div></a></li>
-								<li><a href="#step-6"><br />
-										<div style="font-weight: bold" id="s6"></div></a></li>
-								<li><a href="#step-7"><br />
-										<div style="font-weight: bold" id="s7"></div></a></li>
-							</ul>
-						
-							<div>
-							
-								<div id="step-1" class="">
-								
-									</br>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-10">
-      <div class="row">
-        <input orient="vertical"  type="range" min="1" max="100" value="50" class="slider" id="myRange">
-        <div class="labletext1">
-        <button  id="step1-b1" onClick="replay_step_1(this.id)" class="labletext" text="INFORMATIONSMATERIAL">Die OER verfügt über ein einheitliches und den Inhalten angemessenes Design. Alle Texte sind gut lesbar und alle Abbildungen gut erkennbar.</button>
-        <button id="step1-b2" onClick="replay_step_1(this.id)" class="labletext" text="INFORMATIONSMATERIAL">Alle Texte und Abbildungen der OER sind gut lesbar bzw. erkennbar. Die Nutzung der Bildungsressource wird durch das Design nicht eingeschränkt. </button>
-        <button id="step1-b3" onClick="replay_step_1(this.id)" class="labletext" text="INFORMATIONSMATERIAL">Das Design der OER beeinträchtigt das Lesen der Texte oder das Nachvollziehen von Abbildungen. Die Nutzbarkeit des Lehr- bzw. Lernobjektes ist durch die Darstellung wesentlich eingeschränkt. </button>
-        </div>
+   <head>
+      <title>Smart Wizard</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.62/pdfmake.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.62/vfs_fonts.js"></script>
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script 
+      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+      <!------ Include the above in your HEAD tag ---------->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+      <script src="../js/step_1.js"></script>
+      <script src="../js/step_3.js"></script>
+      <script src="../js/step_4.js"></script>
+      <script src="../js/step_5.js"></script>
+      <script src="../pdfCreator/js/pdfcreator.js"></script>
+      <script src="../text/object_1.js"></script>
+      <script src="../text/object_2.js"></script>
+      <script src="../text/object_3.js"></script>
+      <script src="../text/object_4.js"></script>
+      <script src="../text/license/license.js"></script>
+      <script src="../text/tooltip.js"></script>
+      <!-- jQuery Versions -->
+      <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.5/bootstrap-notify.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+         integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+      <link href="../dist/css/smart_wizard_theme_arrows.css" rel="stylesheet" type="text/css" />
+      <link href="../dist/css/oer_wizard_theme.css" rel="stylesheet" type="text/css" />
+      <style type="text/css">
+         .bs-vertical-wizard {
+         border-right: 1px solid #eaecf1;
+         }
+         .bs-vertical-wizard ul {
+         margin: 0;
+		 padding: 0;
+		 padding-top: 20px;
+         list-style: none;
+         }
+         .bs-vertical-wizard ul>li {
+         display: block;
+         position: relative;
+         }
+         .bs-vertical-wizard ul>li>a {
+         display: block;
+         padding: 0px 0px 1px 80px;
+         color: #333c4e;
+         font-size: 17px;
+         font-weight: 400;
+         letter-spacing: .8px;
+         }
+         /*all line green */
+         .bs-vertical-wizard ul>li>a:before {
+         content: '';
+         position: absolute;
+         width: 1px;
+         height: calc(100% - 25px);
+         background-color: #5cb85c;
+         left: 19px;
+         bottom: -14px;
+         z-index: 3;
+         }
+         .bs-vertical-wizard ul>li>a .ico {
+         pointer-events: none;
+         font-size: 14px;
+         position: absolute;
+         left: 10px;
+         top: 15px;
+         z-index: 2;
+         }
+         /*border circle */
+         .bs-vertical-wizard ul>li>a:after {
+         content: '';
+         position: absolute;
+         border: 2px solid #bdc2ce;
+         border-radius: 50%;
+         top: 14px;
+         left: 6px;
+         width: 26px;
+         height: 26px;
+         z-index: 3;
+         }
+         .bs-vertical-wizard ul>li>a .desc {
+         display: block;
+         color: #bdc2ce;
+         font-size: 11px;
+         font-weight: 400;
+         line-height: 1.8;
+         letter-spacing: .8px;
+         }
+         .bs-vertical-wizard ul>li.complete>a:before {
+         background-color: #5cb85c;
+         opacity: 1;
+         height: calc(100% - 25px);
+         bottom: -9px;
+         }
+         .bs-vertical-wizard ul>li.complete>a:after {display:none;}
+         .bs-vertical-wizard ul>li.locked>a:after {display:none;}
+         .bs-vertical-wizard ul>li:last-child>a:before {display:none;}
+         .bs-vertical-wizard ul>li.complete>a .ico {
+         left: 8px;
+         }
+         .bs-vertical-wizard ul>li>a .ico.ico-green {
+         color: #5cb85c;
+         }
+         .bs-vertical-wizard ul>li>a .ico.ico-muted {
+         color: #bdc2ce;
+         }
+         .bs-vertical-wizard ul>li.current {
+         background-color: #fff;
+         }
+         /* mous hover*/
+         .bs-vertical-wizard ul>li.current:hover>a:before {
+         background-color: #5cb85c;
+         opacity: 1;
+         }
+         /* mous hover and border-color #FF8000*/
+         .bs-vertical-wizard ul>li.current:hover>a:after {
+         border-color: #FF8000;
+         background-color: #5cb85c;
+         opacity: 1;
+         }
+         .bs-vertical-wizard ul>li.current:after, .bs-vertical-wizard ul>li.current:before {
+         /* left: 100%;
+         top: 50%; */
+         border: solid transparent;
+         content: " ";
+         height: 0;
+         width: 0;
+         position: absolute;
+         pointer-events: none;
+         }
+         .bs-vertical-wizard ul>li.current:after {
+         border-color: rgba(255,255,255,0);
+         border-left-color: #fff;
+         border-width: 10px;
+         margin-top: -10px;
+         }
+         .bs-vertical-wizard ul>li.current:before {
+         border-color: rgba(234,236,241,0);
+         border-left-color: #eaecf1;
+         /* border-width: 11px;
+         margin-top: -11px; */
+         }
+         div.oval {
+         display:block;
+         width: 528px;
+         height: 596px;
+         background-color:#0A1F40;
+         /* beware that Safari needs actual
+         px for border radius (bug) */
+         -webkit-border-radius:63px 63px 63px 63px/
+         108px 108px 72px 72px;
+         /* fails in Safari, but overwrites in Chrome */
+         border-radius: 795% 78% 1% 154%/863% 0% 3% 0%;
+         }
+      </style>
+   </head>
+   <body>
+      <!--  TOOL TIP    .tooltip-inner {background-color: #f00;}-->
+      <button type="button" class="btn btn-primary"  data-toggle="modal"
+         data-target=".bs-example-modal-lg">Click to launch Smart Wizard modal</button>
+      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+         <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+               <div class="row">
+                  <div class="col col-xl-12 col-lg-12  col-md-12 col-sm-12 col-12">
+                     <div id="tolltip" class="modal-header" style="background-color: #E6E6E6">
+                        <img src="../image/oer.svg" alt=" " width='220' height='50'>
+                     </div>
+                  </div>
+               </div>
+               <div style="padding: 0rem; padding-left: 5rem;" class="modal-body">
+                  <div class='row'>
+                     <div class='col-sm-6' id="step-1">
+                        <div style="font-size: 35px; color: #0A1F40;"><br/>Qualitätscheck OER</div>
+                        <br/><br/>
+                        <p style="width: 100%">Mit unserem OER Qualitätscheck können Sie Ihre 
+                           Bildungsressourcen selbstständig auf Qualität prüfen und die 
+                           Auswertung als Richtwert für weitere Verbesserungen nehmen. 
+                           Die einzelnen Qualitätsdimensionen werden in der Auswertung 
+                           gesondert aufgeführt, um Stärken und Schwächen der 
+                           Bildungsressource differenziert aufzuzeigen. </br></br>
+                           Der Qualitätscheck basiert auf einem 
+                           Qualitätssicherungsinstrument, das im Rahmen des BMBF-
+                           Projekts "EduArc: Digitale Bildungsarchitekturen" von Prof. Dr. 
+                           Olaf Zawacki-Richter, Dr. Wolfgang Müskens und Carina Dolch 
+                           entwickelt wird. Damit entspricht der Qualitätscheck dem 
+                           aktuellen Forschungsstand und basiert auf langjähriger 
+                           Forschung. 
+                        </p>
+                     </div>
+                     <div id="image" class="oval">
+                        <div  class='col-sm-6'>
+                           <img  style="position: relative; margin-left: 70%; margin-top: 46%;"  src='../image/wizard/lady.png' width='300' height='300'>
+                           <button type="button"  style="position: relative; margin-left: 67%; margin-top: 30%; padding: 6px 60px; border-radius: 10px;  font-size: 25px;"  
+                              class="btn btn-success" onClick='queryById(2,this.id)'>Start</button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row" id="step-2">
+                     <div class="container">
+                        <div  class="row">
+                           <div class="col-12 side-content">
+                              <div  class="bs-vertical-wizard">
+                                 <ul>
+                                    <li class="current">
+                                       <p class="pwizard">100%</p>
+                                       <a href="#"><span onClick='queryById(3,this.id)' class="ptext">Die Bildungsressource beinhaltet oder besteht aus klar abgrenzbaren Lehr- bzw. Lernobjekten, die problemlos in Kursen 
+                                       oder anderen Kontexten (z. B. in einem Studiengang) eingesetzt werden können. Die Inhalte sind in sich geschlossen und 
+                                       setzen nicht die Verwendung anderer Materialien voraus</span>
+                                       </a>
+                                    </li>
+                                    <li class="current">
+                                       <p class="pwizard">75%</p>
+                                       <a href="#">
+                                          <p onClick='queryById(3,this.id)' class="ptext1"></p>
+                                       </a>
+                                    </li>
+                                    <li class="current">
+                                       <p class="pwizard">50%</p>
+                                       <a href="#"><span onClick='queryById(3,this.id)' class="ptext">Die Bildungsressource beinhaltet oder besteht aus klar abgrenzbaren Lehr- bzw. Lernobjekten, die problemlos in Kursen 
+                                       oder anderen Kontexten (z. B. in einem Studiengang) eingesetzt werden können. Die Inhalte sind in sich geschlossen und 
+                                       setzen nicht die Verwendung anderer Materialien voraus</span>
+                                       </a>
+                                    </li>
+                                    <li class="current">
+                                       <p class="pwizard">25%</p>
+                                       <a href="#">
+                                          <span class="desc">
+                                             <p onClick='queryById(3,this.id)' class="ptext1"></p>
+                                          </span>
+                                       </a>
+                                    </li>
+                                    <li class="current">
+                                       <p class="pwizard"> 0%</p>
+                                       <a href="#"><span onClick='queryById(3,this.id)' class="ptext">Aufgrund von inhaltlicher Abhängigkeit ist es nicht möglich, Lehr- bzw. Lernobjekte der Bildungsressource in anderen 
+                                       Kontexten wiederzuverwenden</span>
+                                       </a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row" id="step-3" >
+					<div class="container">
+                        <div  class="row">
+                           <div class="col-12 side-content">
+                              <div  class="bs-vertical-wizard">
+                                 <ul>
+                                    <li class="current">
+                                       <p class="pwizard">100%</p>
+                                       <a href="#"><span onClick='queryById(4,this.id)' class="ptext">Die Bildungsressource beinhaltet oder besteht aus klar abgrenzbaren Lehr- bzw. Lernobjekten, die problemlos in Kursen 
+                                       oder anderen Kontexten (z. B. in einem Studiengang) eingesetzt werden können.</span>
+                                       </a>
+                                    </li>
+                                    <li class="current">
+                                       <p class="pwizard">75%</p>
+                                       <a href="#">
+                                          <p onClick='queryById(3,this.id)' class="ptext1"></p>
+                                       </a>
+                                    </li>
+                                    <li class="current">
+                                       <p class="pwizard">50%</p>
+                                       <a href="#"><span onClick='queryById(4,this.id)' class="ptext">Die Bildungsressource beinhaltet oder besteht aus klar abgrenzbaren Lehr- bzw. Lernobjekten, die problemlos in Kursen 
+                                       oder anderen Kontexten (z. B. in einem Studiengang) eingesetzt werden können.</span>
+                                       </a>
+                                    </li>
+                                    <li class="current">
+                                       <p class="pwizard">25%</p>
+                                       <a href="#">
+                                          <span class="desc">
+                                             <p onClick='queryById(4,this.id)' class="ptext1"></p>
+                                          </span>
+                                       </a>
+                                    </li>
+                                    <li class="current">
+                                       <p class="pwizard"> 0%</p>
+                                       <a href="#"><span onClick='queryById(4,this.id)' class="ptext">Aufgrund von inhaltlicher Abhängigkeit ist es nicht möglich, Lehr- bzw. Lernobjekte der Bildungsressource in anderen 
+                                       Kontexten wiederzuverwenden</span>
+                                       </a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row" id="step-4">
+					<div class="container">
+                        <div  class="row">
+                           <div class="col-12 side-content">
+                              <div  class="bs-vertical-wizard">
+                                 <ul>
+                                    <li class="current">
+                                       <p class="pwizard">100%</p>
+                                       <a href="#"><span onClick='queryById(5,this.id)' class="ptext">Die OER verfügt über ein einheitliches und den Inhalten angemessenes Design. Alle Texte sind gut lesbar und 
+										alle Abbildungen gut erkennbar</span>
+                                       </a>
+                                    </li>
+                                    <li class="current">
+                                       <p class="pwizard">75%</p>
+                                       <a href="#">
+                                          <p onClick='queryById(3,this.id)' class="ptext1"></p>
+                                       </a>
+                                    </li>
+                                    <li class="current">
+                                       <p class="pwizard">50%</p>
+                                       <a href="#"><span onClick='queryById(5,this.id)' class="ptext">Alle Texte und Abbildungen der OER sind gut lesbar bzw. erkennbar. Die Nutzung der Bildungsressource wird durch das 
+										Design nicht eingeschränkt. </span>
+                                       </a>
+                                    </li>
+                                    <li class="current">
+                                       <p class="pwizard">25%</p>
+                                       <a href="#">
+                                          <span class="desc">
+                                             <p onClick='queryById(5,this.id)' class="ptext1"></p>
+                                          </span>
+                                       </a>
+                                    </li>
+                                    <li class="current">
+                                       <p class="pwizard"> 0%</p>
+                                       <a href="#"><span onClick='queryById(5,this.id)' class="ptext">Das Design der OER beeinträchtigt das Lesen der Texte oder das Nachvollziehen von Abbildungen. 
+										Die Nutzbarkeit des Lehr- bzw. Lernobjektes ist durch die Darstellung wesentlich eingeschränk</span>
+                                       </a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row" id="step-5">
+					  
+                  </div>
+                  <div class="row" id="step-6">
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col col-xl-12 col-lg-12  col-md-12 col-sm-12 col-12">
+                     <div class="modal-footer" style="background-color: #E6E6E6;">
+                        <button type="button" style="margin-left: 10px;"
+                           class="btn btn-danger">Löchen</button>
+                        <button type="button" class="btn btn-secondary" onClick="previous()">Zurück</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
       </div>
-    </div>
-  </div>
-</div>
-									
- <p>Range: <span id="demo"></span></p>
- </div>
-
-								 <div id="step-2" class=""></div> 
-								<div id="step-3" class=""></div>
-								<div id="step-4" class=""></div>
-								<div id="step-5" class=""></div>
-								<div id="step-6" class=""></div>
-								<div id="step-7" class=""></div> 
-							</div>
-						</div>
-					</div>
-					
-      
-					<div class="modal-footer" style="background-color: #E6E6E6; text-align: left;">
-			<!-- 		<span id="footer"
-							style="float: left; width: 100%; text-align: left; color: &#10141; font-size: 25px;"><span><strong>Ihre
-									Auswahl:</b></span> Noch nichts ausgewählt!</span>  -->
-					
-								 <button type="button" class="btn btn-secondary" onClick="zu()">Zurück</button>
-						 <button type="button" class="btn btn-secondary" onClick="re()">Weiter</button>	 
-						  	 
-							
-								
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- jQuery Versions -->
-	<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
-	<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
-      <script src = "https://code.jquery.com/jquery-3.3.1.min.js"></script>
-      <script src = "https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-      
+      <!-- Bootstrap JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <!-- Include SmartWizard JavaScript source -->
+      <script type="text/javascript" src="../dist/js/jquery.smartWizard.js"></script>
       <script>
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value;
-
-slider.oninput = function() {
-	
-   
-	
-  output.innerHTML = "<bold>"+this.value+" %</bold>";
-  
-  if(this.value == 100){
-	  var output1 = document.getElementById("step1-b1");
-	  var output2 = document.getElementById("step1-b2");
-	  var output3 = document.getElementById("step1-b3");
-	  output1.innerHTML = "Die OER verfügt über ein einheitliches und den Inhalten angemessenes Design. Alle Texte sind gut lesbar und alle Abbildungen gut erkennbar.";
-	  output2.innerHTML = "Alle Texte und Abbildungen der OER sind gut lesbar bzw. erkennbar. Die Nutzung der Bildungsressource wird durch das Design nicht eingeschränkt.";
-	  output3.innerHTML = "Das Design der OER beeinträchtigt das Lesen der Texte oder das Nachvollziehen von Abbildungen. Die Nutzbarkeit des Lehr- bzw. Lernobjektes ist durch die Darstellung wesentlich eingeschränkt.";
-  }
-  
-  if(this.value == 75){
-	  var output1 = document.getElementById("step1-b1");
-	  var output2 = document.getElementById("step1-b2");
-	  var output3 = document.getElementById("step1-b3");
-	  output1.innerHTML = "Die Bildungsressource beinhaltet oder besteht aus klar abgrenzbaren Lehr- bzw. Lernobjekten";
-	  output2.innerHTML = "Zumindest manche Lehr- bzw. Lernobjekte der Bildungsressource können ohne weitreichende Modifikationen auch in anderen Kontexten eingesetzt werden.";
-	  output3.innerHTML = "Aufgrund von inhaltlicher Abhängigkeit ist es nicht möglich, Lehr- bzw. Lernobjekte der Bildungsressource in anderen Kontexten wiederzuverwenden.";
-  }
-  
-
-}
-</script>
-
-<script type="text/javascript">
-function re() {
-	
-	
-	
-  	$("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection, stepPosition) {
-  		console.log(stepNumber)
-		if(stepDirection === 'backward'){
-		} 
-		
-		if(stepNumber === 1){
-			document.getElementById("step-2").innerHTML="";
-			
-			
-			document.getElementById("s2").innerHTML = "2 Design und Lesbarkeit";
-			
-				var button1 = "<button id='1' class='textfild' onClick='replay_step_3(this.id, 3)'>Die OER verfügt über ein einheitliches und den Inhalten angemessenes Design. Alle Texte sind gut lesbar und alle Grafiken gut erkennbar. (5)</button>" ;
-				
-				var button2 = "<button id='2' class='textfild' onClick='replay_step_3(this.id, 3)'>Die Struktur ist weitgehend übersichtlich. Zumindest an einigen Stellen besteht die Möglichkeit den Lehr- bzw. Lernablauf zu unterbrechen bzw. zu vorher dargestellten Inhalten zurückzukehren. (3)</button>" ;
-				
-				var button3 = "<button id='3' class='textfild' onClick='replay_step_3(this.id, 3)'>Die Struktur ist unübersichtlich bzw. unverständlich oder die Lehr- bzw. Lernsequenz kann nicht unterbrochen und an der gleichen Stelle fortgesetzt werden. (1)</button>" ;
-				
-				document.getElementById("step-2").innerHTML +="</br></br>"+ button1+"</br>"+button2+"</br>"+button3;
-		
-	}
-
- });
-	
-	
-		
-
-	$('#smartwizard').smartWizard("next");
-
-	
-}
-
-function zu(q) {
-	$('#smartwizard').smartWizard("prev");
-	console.log(q)
-	
-}
-</script>
-
-	<!-- Bootstrap JavaScript -->
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-		crossorigin="anonymous"></script>
-
-	<!-- Include SmartWizard JavaScript source -->
-	<script type="text/javascript" src="../dist/js/jquery.smartWizard.min.js"></script>
-
-	<script type="text/javascript">
-	
-
-        $(document).ready(function(){	
-
-        	
-        	
-        	$("#tolltip").tooltip({
-    	        title: "<div class='tooltip2'>Mit diesem Planungstool generieren Sie in wenigen Schritten einen individuellen Leitfaden, der Sie dabei unterstützt qualitativ hochwertige Bildungsmaterialien im OER Standard zu erstellen. Entsprechend Ihrer Auswahl erhalten Sie formale und didaktische Empfehlungen sowie Hinweise zu Lizenzangaben ", 	
-    	        html: true, 
-    	        trigger : 'hover',
-    	    }); 
-        	
-        	$("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection, stepPosition) {
-
-			if(stepDirection === 'backward'){
-			} 
-			
-			if(stepPosition === 'first'){
-			document.getElementById("s2").innerHTML = "2";
-			document.getElementById("s3").innerHTML = "3";
-			document.getElementById("s4").innerHTML = "4";
-			document.getElementById("s5").innerHTML = "5";
-			document.getElementById("s6").innerHTML = "6";
-			document.getElementById("s7").innerHTML = "7";
-		}
-
-	 });
-        	
-        	 var array1 = ['#step1-b1', '#step1-b2', '#step1-b3', '#step1-b4'];
-		
-        	var b = "<button id='download' ></button>";
-            // Toolbar extra buttons
-            var btnFinish = $(b).text('Download PDF')
-                                             .addClass('btn btn-info')
-                                             .on('click', function(){ 
-                                            	 pdf();
-                                            	 
-                                             });
-            var btnCancel = $('<button></button>').text('Löschen')
-                                             .addClass('btn btn-danger')
-                                             .on('click', function(){ $('#smartwizard').smartWizard("reset");                                      
-                                            /*  array1.forEach(element => document.querySelector(element).style.backgroundColor = "&#10141;"); */
-                                             result.clear();
-                                             document.getElementById("footer").innerHTML = "<span style= 'color: &#10141; font-size: 20px;'>" +
-                     						"<b>Ihre Auswahl:</b> " +" Noch nichts ausgewählt!";
-                                         	document.getElementById("download").disabled = true;    
-                                             });
-            // Smart Wizard 1
-            $('#smartwizard').smartWizard({
-                    selected: 0,
-                    theme: 'arrows',
-                    transitionEffect:'fade',
-                    showStepURLhash: false,
-                    toolbarSettings: {
-                        toolbarPosition: 'bottom', // none, top, bottom, both
-                        toolbarButtonPosition: 'left', // left, right, center
-                        showNextButton: false, // show/hide a Next button
-                        showPreviousButton: false, // show/hide a Previous button
-                        toolbarExtraButtons: [] // Extra buttons to show on toolbar, array of jQuery input/buttons elements
-                    
-                             }
-            });
-          	/* document.getElementById("download").disabled = true;      */     	
-        });
-    </script>
-
-</body>
+         function queryById(id, page, ) {console.log(id+" "+page)
+         if(id!=='undefined')
+         	   countPage=id
+         	else
+           countPage++;
+         
+         	 movingPagination(page);
+         }
+      </script>
+      <script type="text/javascript">
+         var countPage = 1;
+         
+         
+          function movingPagination(page) {
+         
+          		if(countPage != 0){
+          			$('div[id^="step-"]').css("display", "none");
+          			document.getElementById("step-"+countPage).style.display = "block";		
+         			document.getElementById("image").style.display = "block";	
+         			 if(countPage == 2){
+         				$('div[id^="image"]').css("display", "none");
+         			 }
+          		if(countPage == 3){
+         			$('div[id^="image"]').css("display", "none");
+         			document.getElementById("step-3").style.display = "block";	
+          			// replay_step_3(page,countPage)
+          		}		
+         		if(countPage == 4){
+         			document.getElementById("step-4").style.display = "block";
+         			$('div[id^="image"]').css("display", "none");
+          		}
+         		if(countPage == 5){
+         			$('div[id^="image"]').css("display", "none");
+          			replay_step_5(page,countPage)
+          		}
+          	}
+          }
+         
+         var infoClick = function () {
+         	$.notify({
+         		// options
+         		title: '<strong>Info</strong>',
+         		message: "<br>Mit diesem Planungstool generieren Sie in wenigen Schritten einen individuellen Leitfaden, der Sie dabei unterstützt qualitativ hochwertige Bildungsmaterialien im OER Standard zu erstellen. Entsprechend Ihrer Auswahl erhalten Sie formale und didaktische Empfehlungen sowie Hinweise zu Lizenzangaben",
+         		icon: 'glyphicon glyphicon-info-sign',
+         	}, {
+         		// settings
+         		element: 'body',
+         		position: null,
+         		type: "info",
+         		allow_dismiss: true,
+         		newest_on_top: true,
+         		showProgressbar: true,
+         		placement: {
+         			from: "top",
+         			align: "center"
+         		},
+         		z_index: 1050,
+         		delay: 9000,
+         		url_target: '_blank',
+         		mouse_over: null,
+         		animate: {
+         			enter: 'animated flipInY',
+         			exit: 'animated flipOutX'
+         		},
+         		onShow: null,
+         		onShown: null,
+         		onClose: null,
+         		onClosed: null,
+         		icon_type: 'image',
+         		template: '<div style="font-size:19px;  font-family: Work Sans, sans-serif;" data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+         			'<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
+         			'<span data-notify="title">{1}</span>' +
+         			'<span data-notify="message">{2}</span>' +
+         			'</div>'
+         
+         	});
+         }
+         
+         
+         $(document).ready(function () {
+         
+         	  movingPagination();
+              
+         	tooltip();
+         
+         	$("#smartwizard").on("showStep", function (e, anchorObject, stepNumber, stepDirection, stepPosition) {
+         
+         	});
+         
+         });
+         
+      </script>
+      <script type="text/javascript">
+         function next() {
+         	// $('#smartwizard').smartWizard("next");
+         
+         }
+      </script>
+      <script type="text/javascript">
+         function previous() {
+         	if(countPage > 0 && countPage <=5){
+         		
+         		countPage--;
+         		console.log("countPage "+countPage)
+                     movingPagination(); 
+         		 $('#smartwizard').smartWizard("prev");
+         	}
+         }
+      </script>
+   </body>
 </html>
 
