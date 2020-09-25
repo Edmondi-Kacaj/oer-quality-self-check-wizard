@@ -13,7 +13,7 @@
 /* SmartWizard Theme: Arrows */
 .sw-theme-arrows {
     border-radius: 5px;
-    border: 0px solid #ddd;
+    border: 1px solid #ddd;
 }
 
 .sw-theme-arrows > .sw-container {
@@ -109,16 +109,14 @@
     background: #46b8da !important;
 }
 
-/* color change  #5cb85c */
 .sw-theme-arrows > ul.step-anchor > li.active > a {
-    border-color: #58D3F7 !important;
+    border-color: #54B6B5 !important;
     color: #fff !important;
-    background: #58D3F7 !important;
+    background: #54B6B5 !important;
 }
 
-/* color change  #5cb85c */
 .sw-theme-arrows > ul.step-anchor > li.active > a:after {
-    border-left: 30px solid #58D3F7 !important;
+    border-left: 30px solid #54B6B5 !important;
 }
 
 .sw-theme-arrows > ul.step-anchor > li.done > a {
