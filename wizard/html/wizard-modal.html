@@ -13,9 +13,8 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.62/pdfmake.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.62/vfs_fonts.js"></script>
       <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-      <script 
       <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-      <!------ Include the above in your HEAD tag ---------->
+
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
       <script src="../js/step_1.js"></script>
       <script src="../js/step_3.js"></script>
@@ -459,14 +458,20 @@
          
          
           function movingPagination(page) {
+        	  
+         /*   diese Variable erweitern countPage != 7 */
          
-          		if(countPage != 0){
+         
+          		if(countPage != 0 && countPage != 7){
+          			
           			$('div[id^="step-"]').css("display", "none");
           			document.getElementById("step-"+countPage).style.display = "block";		
-         			document.getElementById("image").style.display = "block";	
-         			 if(countPage == 2){
+         			document.getElementById("image").style.display = "block";
+         			
+         		if(countPage == 2){
          				$('div[id^="image"]').css("display", "none");
-         			 }
+         		}
+         			 
           		if(countPage == 3){
          			$('div[id^="image"]').css("display", "none");
          			document.getElementById("step-3").style.display = "block";	
