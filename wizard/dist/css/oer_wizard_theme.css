@@ -197,6 +197,46 @@
 	padding: 50px;
 }
 
+
+.ptext2 {
+    background-color: #0A1F40;
+    cursor: default !important;
+    border: none;
+	border-radius: 15px;
+	position: relative;
+	width: 85%;
+	margin-top: 20px;
+	color: #e67e22;
+	height: 100px;
+	text-align: webkit-auto;;
+	vertical-align: 50px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+	cursor: pointer;	
+
+}
+.ptext3 {
+    background-color: #e67e22;
+    cursor: default !important;
+	border: none;
+	margin-left: 4%;
+	margin-top: 6%;
+	/* margin-bottom: 10px;
+	margin-right: 10px; */
+	height: 40%;
+	border-radius: 5px;
+	position: relative;
+	width: 18%;
+	color: black;
+	text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size:26px;
+	cursor: pointer;	
+
+}
+
 .ptext1:hover {
 	border: 2px solid #5cb85c;
 	/* box-shadow: 6px 1px 10px -10px #3f4a4d; */
