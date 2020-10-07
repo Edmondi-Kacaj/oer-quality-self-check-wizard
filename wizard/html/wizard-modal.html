@@ -16,7 +16,6 @@
          integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
       <link href="../dist/css/smart_wizard_theme_arrows.css" rel="stylesheet" type="text/css" />
       <link href="../dist/css/oer_wizard_theme.css" rel="stylesheet" type="text/css" />
-
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
       <script src="../js/step_1.js"></script>
       <script src="../js/step_3.js"></script>
@@ -29,15 +28,11 @@
       <script src="../text/object_4.js"></script>
       <script src="../text/license/license.js"></script>
       <script src="../text/tooltip.js"></script>
-
-
-
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="css/site.css">
       <link rel="stylesheet" href="../src/richtext.min.css">
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script type="text/javascript" src="../src/jquery.richtext.js"></script>
-      
       <style type="text/css">
          .bs-vertical-wizard {
          border-right: 1px solid #eaecf1;
@@ -182,7 +177,7 @@
                   </div>
                </div>
                <div style="padding: 0rem; padding-left: 5rem;" class="modal-body">
-                  <div class='row'>
+                  <div id="start" class='row'>
                      <div class='col-sm-6' id="step-1">
                         <div style="font-size: 35px; color: #0A1F40;"><br/>Qualitätscheck OER</div>
                         <br/><br/>
@@ -210,56 +205,11 @@
                      </div>
                   </div>
                   <div class="row" id="step-2">
-
-                     <!-- <div class="container">
-                        <div class="row">
-                           <div class="col col-xl-12 col-lg-12  col-md-12 col-sm-12 col-12">
-
-                          </br></br><span style="box-shadow: 12px 15px 25px -11px #3f4a4d;" class="ptext4"><p style="margin-left: 20px; margin-top: 30px;">War der Qualitätscheck hilfreich?</p>
-                              <span style="box-shadow: 12px 15px 25px -11px #3f4a4d;" class="ptext5"></span> 
-                           </span>
-                           </div>
-
-                           <div class="col col-xl-12 col-lg-12  col-md-12 col-sm-12 col-12">
-                          </br><span style="box-shadow: 12px 15px 25px -11px #3f4a4d;" class="ptext4"><p style="margin-left: 20px; margin-top: 30px;">Was kann noch verbessert werden bzw. was hat Ihnen nicht gefallen?</p>
-                           <span style="box-shadow: 12px 15px 25px -11px #3f4a4d;" class="ptext5">
-                           
-                              <div class="page-wrapper box-content">
-
-                           <textarea class="content" name="example"></textarea>
-               
-                       </div>
-
-                           </span> 
-                        </span>
-                        </div>
-                        <button type="button" onClick="ff()" class="btn btn-secondary" >text</button> 
-                        
-               
-                       <script>
-                       $(document).ready(function() {
-                           $('.content').richText();
-
-                          
-                       });
-   
-                       </script>
-                       <script>
-                          function ff(){
-                           console.log($('.content').val())
-                          }
-                       </script>
-
- 
-                        </div>
-                      </div> -->
-
                      <div class="container">
                         <div  class="row">
                            <div class="col-12 side-content">
                               <div  class="bs-vertical-wizard">
-                  
-                                  <ul>
+                                 <ul>
                                     <li class="current">
                                        <p class="pwizard">100%</p>
                                        <a href="#"><span onClick='queryById(3,this.id,`step-2`,100)' class="ptext">2.Die Bildungsressource beinhaltet oder besteht aus klar abgrenzbaren Lehr- bzw. Lernobjekten, die problemlos in Kursen 
@@ -294,7 +244,7 @@
                                        Kontexten wiederzuverwenden</span>
                                        </a>
                                     </li>
-                                 </ul> 
+                                 </ul>
                               </div>
                            </div>
                         </div>
@@ -474,30 +424,100 @@
                      </div>
                   </div>
                </div>
-              
                <div class="row" id="step-7">
                   <div class="container">
                      <div style="margin-bottom: 20px; margin-left: 40px; margin-top: 20px;" class="row">
-                       <div class="col col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12"><span class="ptext2"><span id="s1" class="ptext3"></span><strong>&nbsp; &nbsp;Inhaltliche Wiederverwertbarkeit</strong></span></div>
-                       <div class="col col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12"><span class="ptext2"><span id="s2" class="ptext3"></span><strong>&nbsp; &nbsp;Motivation/Aktivierung</strong></span></div>
-                       <div class="w-100"></div>
-                       <div class="col col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12"><span class="ptext2"><span id="s3" class="ptext3"></span><strong>&nbsp; &nbsp;Design und Lesbarkeit</strong></span></div>
-                       <div class="col col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12"><span class="ptext2"><span id="s4" class="ptext3"></span><strong>&nbsp; &nbsp;Hilfestellung und Support</strong></span></div>
-                       <div class="w-100"></div>
-                       <div class="col col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12"><span class="ptext2"><span id="s5" class="ptext3"></span><strong>&nbsp; &nbsp;Struktur und Orientierung</strong></span></div>
-                       <div class="col col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12"><span class="ptext2"><span id="s6" class="ptext3"></span><strong>&nbsp; &nbsp;Anwendung und Transfer</strong></span></div>
-                       <!-- <div class="w-100"></div> -->
-                       <!-- <div class="col"><span style="width: 27%;" class="ptext2"><span id="as" class="ptext3"></span>Fachwissenschaftliche Fundierung</span></div> -->
+                        <div class="col col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12"><span class="ptext2"><span id="s1" class="ptext3"></span><strong>&nbsp; &nbsp;Inhaltliche Wiederverwertbarkeit</strong></span></div>
+                        <div class="col col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12"><span class="ptext2"><span id="s2" class="ptext3"></span><strong>&nbsp; &nbsp;Motivation/Aktivierung</strong></span></div>
+                        <div class="w-100"></div>
+                        <div class="col col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12"><span class="ptext2"><span id="s3" class="ptext3"></span><strong>&nbsp; &nbsp;Design und Lesbarkeit</strong></span></div>
+                        <div class="col col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12"><span class="ptext2"><span id="s4" class="ptext3"></span><strong>&nbsp; &nbsp;Hilfestellung und Support</strong></span></div>
+                        <div class="w-100"></div>
+                        <div class="col col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12"><span class="ptext2"><span id="s5" class="ptext3"></span><strong>&nbsp; &nbsp;Struktur und Orientierung</strong></span></div>
+                        <div class="col col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12"><span class="ptext2"><span id="s6" class="ptext3"></span><strong>&nbsp; &nbsp;Anwendung und Transfer</strong></span></div>
+                        <!-- <div class="w-100"></div> -->
+                        <!-- <div class="col"><span style="width: 27%;" class="ptext2"><span id="as" class="ptext3"></span>Fachwissenschaftliche Fundierung</span></div> -->
                      </div>
-                   </div>
-            </div>
+                  </div>
+               </div>
+               <div style="padding: 0rem; padding-left: 9rem;" class="row" id="step-8">
+                  <div class="container">
+                     <div class="row">
+                        <div class="col col-xl-12 col-lg-12  col-md-12 col-sm-12 col-12">
+                           </br></br>
+                           <span style="box-shadow: 12px 15px 25px -11px #3f4a4d;" class="ptext4">
+                           <p style="margin-left: 20px; margin-top: 30px;">War der Qualitätscheck hilfreich?</p>
+                           <div style="box-shadow: 12px 15px 25px -11px #3f4a4d;" class="ptext5">
+                              </br></br>
+                              <div class="container">
+                                 <div class="row">
+                                    <div  class="col-sm">
+                                       <div id="a" class="ptext6" onClick="change(this.id)"></div>
+                                       <div  class="col-sm">
+                                          <div class="ptext7">gar nicht</div>
+                                       </div>
+                                    </div>
+                                    <div class="col-sm">
+                                       <span id="b" class="ptext6" onClick="change(this.id)"></span>
+                                       <div  class="col-sm">
+                                          <div class="ptext7">wenig hilfreich</div>
+                                       </div>
+                                    </div>
+                                    <div class="col-sm">
+                                       <span id="c" class="ptext6" onClick="change(this.id)"></span>
+                                       <div  class="col-sm">
+                                          <div class="ptext7">hilfreich</div>
+                                       </div>
+                                    </div>
+                                    <div class="col-sm">
+                                       <span id="d" class="ptext6" onClick="change(this.id)"></span>
+                                       <div  class="col-sm">
+                                          <div class="ptext7">sehr hilfreich</div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <br/>
+                     <div class="col col-xl-12 col-lg-12  col-md-12 col-sm-12 col-12">
+                        </br>
+                        <span style="box-shadow: 12px 15px 25px -11px #3f4a4d;" class="ptext4">
+                           <p style="margin-left: 20px; margin-top: 30px;">Was kann noch verbessert werden bzw. was hat Ihnen nicht gefallen?</p>
+                           <span style="box-shadow: 12px 15px 25px -11px #3f4a4d;" class="ptext5">
+                              <div class="page-wrapper box-content">
+                                 <textarea class="content" name="example"></textarea>
+                              </div>
+                           </span>
+                        </span>
+                     </div></br></br></br>
+                  </div>
+               </div>
+
+               <div class="row" id="step-9">
+                  <div class="container">
+                     <div class="row">
+                        <div class="col col-xl-12 col-lg-12  col-md-12 col-sm-12 col-12">
+                           </br></br>
+                           <div style="padding: 223px; border: 41px solid #FFF; font-size: 43px;">
+                              Vielen Dank für Ihr Feedback!
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+                        
+
                <div class="row">
                   <div class="col col-xl-12 col-lg-12  col-md-12 col-sm-12 col-12">
                      <div class="modal-footer" style="background-color: #E6E6E6;">
                         <!-- <button type="button" style="margin-left: 10px;"
                            class="btn btn-danger">Löchen</button> -->
-                        <button id="previous" type="button" class="btn btn-secondary" onClick="previous()">Zurück</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen</button>
+                        <button style="position: absolute; left: 3%;" id="previous" type="button" class="btn btn-secondary" onClick="previous()">Zurück</button>
+                        <button id="next" type="button"  class="btn btn-success" onClick="next()">Weiter</button>
+                        <button id="close" type="button" class="btn btn-secondary" onClick="closeModal()">Schließen</button>
+                        <button id="send" type="button"  class="btn btn-secondary" onClick="send()">Abschicken</button>
                      </div>
                   </div>
                </div>
@@ -510,21 +530,12 @@
       <!-- Include SmartWizard JavaScript source -->
       <script type="text/javascript" src="../dist/js/jquery.smartWizard.js"></script>
 
-
-
-
-
       <script>
-         
          function queryById(id, page, step, percent) {
-            
             if(step !== 'undefined' && percent !== 'undefined'){
-               console.log(step+" -> "+percent)
-
                result.set(step, percent+"%");
-               console.log(result.get("step-2"))
             }
-            
+
          if(id!=='undefined')
          	   countPage=id
          	else
@@ -539,15 +550,22 @@
          
           function movingPagination(page) {
             
-          		if(countPage != 0 && countPage != 8){
+          		if(countPage != 0 && countPage != 9){
                   $('button[id^="previous"]').css("display", "none");
-          			$('div[id^="step-"]').css("display", "none");
+                  $('button[id^="next"]').css("display", "none");
+                   $('div[id^="step-"]').css("display", "none");
+                   $('button[id^="send"]').css("display", "none");
           			document.getElementById("step-"+countPage).style.display = "block";		
          			document.getElementById("image").style.display = "block";
-
-          		if(countPage == 2 || countPage == 3 || countPage == 4 || countPage == 5 || countPage == 6 || countPage == 7){
+         
+          		if(countPage == 2 || countPage == 3 || countPage == 4 || countPage == 5 || countPage == 6 || countPage == 7 || countPage == 8){
                   $('div[id^="image"]').css("display", "none");
                   document.getElementById("previous").style.display = "block";
+         
+                  if(countPage == 7){
+                     document.getElementById("next").style.display = "block";
+                  }
+                  
          			document.getElementById("step-"+countPage).style.display = "block";	
                 }	
                 if(countPage == 7){
@@ -562,9 +580,9 @@
             }
           }
          
-
+         
          $(document).ready(function () {
-            
+            $('.content').richText(); 
          	  movingPagination();
               
          	tooltip();
@@ -578,19 +596,72 @@
       </script>
       <script type="text/javascript">
          function next() {
-         	// $('#smartwizard').smartWizard("next");
-         
+            countPage++;
+            queryById(8,8,`step-8`,0);
+             $('div[id^="step-7"]').css("display", "none");
+            document.getElementById("step-"+countPage).style.display = "block";
+
+            $('button[id^="previous"]').css("display", "none");
+             $('button[id^="next"]').css("display", "none");
+
+             document.getElementById("send").style.display = "block";
+
          }
       </script>
       <script type="text/javascript">
          function previous() {
-         	if(countPage > 0 && countPage <=7){
+         	if(countPage > 0 && countPage <=8){
          		countPage--;
                      movingPagination(); 
-         		 $('#smartwizard').smartWizard("prev");
          	}
          }
       </script>
+
+      <script>
+         function send(){
+           
+         console.log($('.content').val())
+
+         $('div[id^="step-8"]').css("display", "none");
+         $('button[id^="send"]').css("display", "none");
+            queryById(9,9,`step-9`,0);
+            document.getElementById("step-9").style.display = "block";  
+         }
+      </script>
+
+      <script>
+         function closeModal(){
+               countPage = 1;
+               result.clear();
+               $('.richText-editor')[0].innerHTML='';
+              
+               $('button[id^="previous"]').css("display", "none");
+               $('div[id^="step"]').css("display", "none");
+               $('button[id^="send"]').css("display", "none");
+      
+               document.getElementById("image").style.display = "block";
+               document.getElementById("step-"+countPage).style.display = "block";
+               document.getElementById("close").style.display = "block";
+         }
+      </script>
+
+      <script>
+         function change(id){
+         $(document).ready(function() {
+
+         var object = document.querySelectorAll(".ptext6");
+         
+         object.forEach(function(userItem) {
+         
+            userItem.style.backgroundColor = '#d4d9e9';
+         
+            });
+         
+            document.getElementById(id).style.backgroundColor = '#5cb85c';
+         });
+         }
+      </script>
+
    </body>
 </html>
 
