@@ -150,7 +150,7 @@
          }
          div.oval {
          display:block;
-         width: 528px;
+         width: 529px;
          height: 596px;
          background-color:#0A1F40;
          /* beware that Safari needs actual
@@ -158,20 +158,63 @@
          -webkit-border-radius:63px 63px 63px 63px/
          108px 108px 72px 72px;
          /* fails in Safari, but overwrites in Chrome */
-         border-radius: 795% 78% 1% 154%/863% 0% 3% 0%;
+         border-radius: 790% 0% 0% 1%/863% 0% 0% 0%;
          }
+
+         .btn {
+         border: none;
+         padding: .7em 1.5em;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         color: #0a1f40;
+         letter-spacing: .1em;
+         cursor: pointer;
+         font-size: 1em;
+         font-family: "Work Sans",sans-serif;
+         font-weight: 600;
+         background-color: #54b6b5;
+         background-image: -webkit-gradient(linear, left, right, from(#54b6b5), to(#a6d492));
+         background-image: -webkit-linear-gradient(left, #54b6b5, #a6d492);
+         background-image: -moz-linear-gradient(left, #54b6b5, #a6d492);
+         background-image: -ms-linear-gradient(left, #54b6b5, #a6d492);
+         background-image: -o-linear-gradient(left, #54b6b5, #a6d492);
+         background-image: linear-gradient(left, #54b6b5, #a6d492);
+         filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="#54b6b5", endColorStr="#a6d492");
+         -webkit-box-shadow: 0.3em 0.3em 0.5em rgba(10, 31, 64, 0.2);
+         -khtml-box-shadow: 0.3em 0.3em 0.5em rgba(10, 31, 64, 0.2);
+         -moz-box-shadow: 0.3em 0.3em 0.5em rgba(10, 31, 64, 0.2);
+         -ms-box-shadow: 0.3em 0.3em 0.5em rgba(10, 31, 64, 0.2);
+         -o-box-shadow: 0.3em 0.3em 0.5em rgba(10, 31, 64, 0.2);
+         box-shadow: 0.3em 0.3em 0.5em rgba(10, 31, 64, 0.2);
+         -webkit-border-radius: 8px;
+         -khtml-border-radius: 8px;
+         -moz-border-radius: 8px;
+         -ms-border-radius: 8px;
+         -o-border-radius: 8px;
+         border-radius: 8px;
+}
+         .btn:hover {
+            color: #0a1f40;
+            background-color: #f38c3e;
+            background-image: -webkit-gradient(linear, left, right, from(#f38c3e), to(#f25b68));
+            background-image: -webkit-linear-gradient(left, #f38c3e, #f25b68);
+            background-image: -moz-linear-gradient(left, #f38c3e, #f25b68);
+            background-image: -ms-linear-gradient(left, #f38c3e, #f25b68);
+            background-image: -o-linear-gradient(left, #f38c3e, #f25b68);
+            background-image: linear-gradient(left, #f38c3e, #f25b68);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="#f38c3e", endColorStr="#f25b68");
+         }
+         
       </style>
    </head>
    <body>
-      <!--  TOOL TIP    .tooltip-inner {background-color: #f00;}-->
-      <button type="button" class="btn btn-primary"  data-toggle="modal"
-         data-target=".bs-example-modal-lg">Click to launch Smart Wizard modal</button>
-      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div id="exampleModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
          <div class="modal-dialog modal-xl">
             <div class="modal-content">
                <div class="row">
                   <div class="col col-xl-12 col-lg-12  col-md-12 col-sm-12 col-12">
-                     <div id="tolltip" class="modal-header" style="background-color: #E6E6E6">
+                     <div class="modal-header" style="background-color: #E6E6E6">
                         <img src="../image/oer.svg" alt=" " width='220' height='50'>
                      </div>
                   </div>
@@ -198,8 +241,8 @@
                      </div>
                      <div id="image" class="oval">
                         <div  class='col-sm-6'>
-                           <img  style="position: relative; margin-left: 70%; margin-top: 46%;"  src='../image/wizard/lady.png' width='300' height='300'>
-                           <button type="button"  style="position: relative; margin-left: 67%; margin-top: 30%; padding: 6px 60px; border-radius: 10px;  font-size: 25px;"  
+                           <img  style="position: relative; margin-left: 60%; margin-top: 70%;"  src='../image/wizard/oernds.svg'width="140%">
+                           <button class="btn" type="button"  style="position: relative; margin-left: 67%; margin-top: 30%; padding: 6px 60px; border-radius: 10px;  font-size: 25px;"  
                               class="btn btn-success" onClick='queryById(2,this.id, `undefined`, `undefined`)'>Start</button>
                         </div>
                      </div>
@@ -512,12 +555,9 @@
                <div class="row">
                   <div class="col col-xl-12 col-lg-12  col-md-12 col-sm-12 col-12">
                      <div class="modal-footer" style="background-color: #E6E6E6;">
-                        <!-- <button type="button" style="margin-left: 10px;"
-                           class="btn btn-danger">Löchen</button> -->
-                        <button style="position: absolute; left: 3%;" id="previous" type="button" class="btn btn-secondary" onClick="previous()">Zurück</button>
-                        <button id="next" type="button"  class="btn btn-success" onClick="next()">Weiter</button>
-                        <button id="close" type="button" class="btn btn-secondary" onClick="closeModal()">Schließen</button>
-                        <button id="send" type="button"  class="btn btn-secondary" onClick="send()">Abschicken</button>
+                        <button id="previous" type="button" class="btn" onClick="previous()">Zurück</button>
+                        <button id="next" type="button"  class="btn" onClick="next()">Weiter</button>
+                        <button id="send" type="button"  class="btn" onClick="send()">Abschicken</button>
                      </div>
                   </div>
                </div>
@@ -582,6 +622,11 @@
          
          
          $(document).ready(function () {
+            $("#exampleModal").modal({
+					backdrop: 'static',
+					keyboard: false,
+					show: true
+				})
             $('.content').richText(); 
          	  movingPagination();
               
@@ -648,7 +693,6 @@
       <script>
          function change(id){
          $(document).ready(function() {
-
          var object = document.querySelectorAll(".ptext6");
          
          object.forEach(function(userItem) {
