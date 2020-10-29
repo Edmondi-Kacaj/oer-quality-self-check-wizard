@@ -213,7 +213,6 @@
     text-decoration: none;
     display: inline-block;
     font-size: 20px;
-	cursor: pointer;
 	box-shadow: 12px 15px 25px -11px #3f4a4d;
 
 }
@@ -232,9 +231,7 @@
 	text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size:26px;
-	cursor: pointer;	
-
+    font-size:26px;	
 }
 
 .ptext4 {
