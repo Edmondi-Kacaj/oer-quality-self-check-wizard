@@ -166,7 +166,7 @@
 
 .ptext {
     background-color: #FFFF;
-    cursor: default !important;
+	cursor: default !important;
 	border-radius: 15px;
 	position: relative;
     top: -31px;
@@ -200,13 +200,13 @@
 
 
 .ptext2 {
-    background-color: #0A1F40;
+    background-color: #e4e9ec;
     cursor: default !important;
     border: none;
 	border-radius: 15px;
 	position: relative;
 	width: 95%;
-	color: #e67e22;
+	color: #061631;
 	height: 100px;
 	text-align: webkit-auto;;
 	vertical-align: 50px;
@@ -218,16 +218,18 @@
 }
 .ptext3 {
     background-color: #FFFF;
-    cursor: default !important;
+	cursor: default !important;
+	box-shadow: 11px 4px 15px 3px #3f4a4d;d;
 	border: none;
 	margin-left: 3%;
 	margin-top: 3%;
+	margin-right: 35px;
 	padding-top: 14px;
 	height: 70%;
 	border-radius: 5px;
 	position: relative;
 	width: 18%;
-	color: black;
+	color: #329432;
 	text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -235,7 +237,6 @@
 }
 
 .ptext4 {
-    background-color: #0A1F40;
     cursor: default !important;
 	border: none;
 
@@ -243,9 +244,6 @@
 	border-top-right-radius: 20px;
 	position: relative;
 	width: 85%;
-	color: #e67e22;
-	height: 40%;
-	text-align: webkit-auto;;
 	vertical-align: 50px;
     text-decoration: none;
     display: inline-block;
@@ -255,7 +253,7 @@
 }
 
 .ptext5 {
-    background-color: #d4d9e9;
+    /* background-color: #d4d9e9; */
 	cursor: default !important;
 	border-bottom-left-radius: 40px;
 	border-bottom-right-radius: 40px;
