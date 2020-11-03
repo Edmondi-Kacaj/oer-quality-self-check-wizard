@@ -606,12 +606,12 @@
                         <div class="col col-xl-12 col-lg-12  col-md-12 col-sm-12 col-12">
                            </br></br>
                            
-                           <img  style="margin-left: 15%; margin-right: 26%; margin-top: -15%;" src="../image/oernds_oer_gardening_text.svg">
+                           <img  style="margin-left: 15%; margin-right: 26%; margin-top: -15%; margin-bottom: 5%;" src="../image/oernds_oer_gardening_text.svg">
                         </div>
                      </div>
                   </div>
                </div>
-               <br/><br/>    
+                
 
                <div class="row">
                   <div id="footer" class="col col-xl-12 col-lg-12  col-md-12 col-sm-12 col-12">
@@ -657,7 +657,6 @@
          
          
           function movingPagination(page) {
-            console.log(countPage)
           		if(countPage != 0 && countPage != 12){
                    $('button[id^="previous"]').css("display", "none");
                    $('button[id^="next"]').css("display", "none");
@@ -691,7 +690,6 @@
                 }
                 
                 if(countPage == 11){
-                  console.log("dddd "+countPage)
                   $('button[id^="previous"]').css("display", "none");
                   document.getElementById("close").style.display = "block";
                  
@@ -707,15 +705,10 @@
 					keyboard: false,
 					show: true
 				})
-            $('.content').richText(); 
+            // $('.content').richText(); 
          	  movingPagination();
               
          	tooltip();
-         
-         	$("#smartwizard").on("showStep", function (e, anchorObject, stepNumber, stepDirection, stepPosition) {
-         
-         	});
-         
          });
          
       </script>
