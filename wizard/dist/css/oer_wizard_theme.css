@@ -197,36 +197,35 @@
 
 
 .ptext2 {
-    background-color: #e4e9ec;
+    background-color: #0A1F40;
     cursor: default !important;
     border: none;
-	border-radius: 15px;
+	border-radius: 52px;
 	position: relative;
-	width: 95%;
-	color: #061631;
+	width: 89%;
+	color: #FFFFFF;
 	height: 100px;
-	text-align: webkit-auto;;
-	vertical-align: 50px;
+	vertical-align: 58px;
     text-decoration: none;
     display: inline-block;
-    font-size: 20px;
-	box-shadow: 12px 15px 25px -11px #3f4a4d;
+    font-size: 19px;
+	box-shadow: 14px 15px 15px -10px #3f4a4d;
 
 }
 .ptext3 {
     background-color: #FFFF;
 	cursor: default !important;
-	box-shadow: 11px 4px 15px 3px #3f4a4d;d;
 	border: none;
-	margin-left: 3%;
+	margin-left: 4%;
 	margin-top: 3%;
-	margin-right: 35px;
+	margin-right: 4px;
 	padding-top: 14px;
-	height: 70%;
 	border-radius: 5px;
 	position: relative;
 	width: 18%;
-	color: #329432;
+	background-image:linear-gradient(90deg,#54b6b5,#54b6b5,#a6d492,#a6d492);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 	text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -362,17 +361,20 @@
 .button2:hover {background-color: #1a53ff}
 
 .textfild {
+	cursor: default !important;
 	background-color: #e4e9ec;
 	padding: 7px; border: 8px solid #FFFFFF;
 	border-radius: 12px;
-	width: 70%;
+	width: 75%;
 	margin: 0 9%;
-	color: black;
-	
+	margin-top: 20px;
+	background-image:linear-gradient(90deg,#54b6b5,#54b6b5,#a6d492,#a6d492);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	font-size: 27px;
+	font-size: 35px;
 	cursor: pointer;
 }
 
